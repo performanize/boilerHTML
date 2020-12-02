@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<!-- #region HTML open tag -->
+
+<!-- Set the page lang attribute
+    https://www.w3.org/International/questions/qa-html-language-declarations
+    Always use the lang="" attribute in the HTML tag to set the language and optional country of the page. -->
+
+<!-- Define the use of Open Graph
+    https://ogp.me/
+    Open Graph is used to give users the relevant content when sharing on a social platform.
+    "The Open Graph protocol enables any web page to become a rich object in a social graph.
+    For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook." 
+    Define the vertical in prefix="og: https://ogp.me/ns/vertical#"> where vertical is replaced by eg. website, video, music... 
+    More information on verticals on https://ogp.me/
+  -->
+
+<!-- OPTIONAL WHEN NEEDED: Use conditional commenting to target IE browsers with CSS (or even JS... ). 
+    You should not use this but you can. If you must. Add classes in css to target specific browsers.
+    Set class="no-js" in the html tag. Use the class to add additional styling in CSS that targets browsers that do not support javascript.
+    Modernizr uses this class and will change it from no-js to js if javascript is supported. 
+    ==> Consult https://gs.statcounter.com/browser-market-share to check browser usage for your target region -->
+
+<!--[if lt IE 7]>      <html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7">  <![endif]-->
+<!--[if IE 7]>         <html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js lt-ie9 lt-ie8">         <![endif]-->
+<!--[if IE 8]>         <html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js lt-ie9">                <![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en-US" prefix="og: https://ogp.me/ns/website#">
+<!--<![endif]-->
+
+<!-- #endregion HTML open tag -->
+
+<head>
+  <!-- Set the charset used on this page.
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset 
+    https://www.w3schools.com/html/html_charset.asp -->
+
+    <meta charset="UTF-8">
+
+  <!-- #region Scripts IMMEDIATE -->
+
+  <!--  Run pre rendering script here.
+    Any inline script will be evaluated and executed immediaty.
+    Any linked script will be executed as soon as it is loaded.
+    Scripts without async or defer can block rendering untill they are loaded.
+    Load only scripts here that are needed before rendering.
+
+    Example:
+
+    <script>
+      // your inline script
+    </script>
+
+    <script src="yourscript.js"></script> -->
+
+  <!-- #endregion Scripts IMMEDIATE -->
+
+  <!-- Set the base URL.
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    All relative src attributes will be relative to the base URL.
+    Use the target attribute to define default window behavior (Default behavior if ommitted is '_self').
+    ==> EXAMPLE: <base href="#" target="_blank">
+    ==> Open Graph tags do not acknowledge <base>, and should always have full absolute URLs. -->
+
+  <base href="https://boilerHTML.com">
+
+  <!-- #region Preconnect-->
+
+  <!-- 
+    Preconnect to any domains that hold resources that need to be loaded before the browser starts rendering.
+    Example: preconnect google fonts domains *1: 
+  -->
+
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin /> -->
+
+  <!-- #endregion -->
+
+  <!-- #region Preload-->
+
+  <!--
+    Preload any resources that are needed to render content. Preloading does not execute, it needs another link to the object to execute it!
+    Example: preload google font *2, *5: section *3 needs to be uncommented to execute the css.
+  -->
+
+  <!-- <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap&text=This%20contentladryfwb" /> -->
+
+  <!-- Another option is to change the rel attribute of the preload as soon as possible: -->
+  <!-- <script>
+    document.addEventListener("beforeunload", initCSS());
+    function initCSS() {
+      document.getElementById('css').setAttribute('rel', 'stylesheet'); // ==> Add the ID to the preload link.
+    }
+  </script> -->
+
+  <!-- Insertion point: Google fonts *3 -->
+
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=block&text=This%20contentladryfwb" media="print" onload="this.media='all'" /> -->
+
+  <!-- Insertion point: Google fonts *4 -->
+
+  <!-- <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=block&text=This%20contentladryfwb" />
+  </noscript> -->
+
+  <!-- <link rel="preload" async href="images/images/synergy.jpg" as="image" /> -->
+
+  <!-- #endregion -->
+
+  <!-- Set the canonical url. 
+    Always add a canonical URL, even if it is the same as the page url! 
+    https://yoast.com/rel-canonical/.
+    "The rel=canonical element, often called the “canonical link”, helps webmasters prevent duplicate content issues.
+    It does this by specifying the “canonical URL”, the “preferred” version of a web page – the original source, even.
+    Using it will improve a site’s SEO." 
+  -->
+
+  <link rel="canonical" href="https://boilerHTML.com">
+
+  <!-- Set the viewport to device width and zoom level to O.
+    This is important for responsive pages.
+    Don't add a maximum-scale value to solve landscape scaling in safari. It blocks zooming!
+    Add -webkit-text-size-adjust: 100%; to the HTML tag instead. Normalize.css does this.
+    https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set robots behavior
+    Better for SEO. Default robots behavior is INDEX, FOLLOW.
+    Adding that is not necessary.
+    Anything else, you should add. http://www.robotstxt.org/meta.html -->
+
+  <meta name="robots" content="NOINDEX, NOFOLLOW">
+
+  <!-- Set the page title.
+    Title is very important for SEO. -->
+
+  <title>BoilerHTML.com | A very extensive HTML5 boilerplate.</title>
+
+  <!-- #region Meta information -->
+
+  <!-- Set the page description.
+    Description is very important for SEO -->
+
+  <meta name="description" content="BoilerHTML is an extensive HTML5 boilerplate that can be used a starter for any HTML web page.">
+
+  <!-- Set the page author.
+    Author is important for SEO -->
+
+  <meta name="author" content="Performanize">
+
+  <!-- Set the page keywords.
+    Keywords are ignored by Google and Bing.
+    Yandex still uses them.
+    Bing is using them to classify spamming websites? -->
+
+  <meta name="keywords" content="HTML, boilerplate, htmlboilerplate, HTML template, HTML starter">
+
+  <!-- Set the minimum Open Graph tags.
+    Optional tags and more information about the use of open graph tags on http://ogp.me/ 
+    testing for facebook: https://developers.facebook.com/tools/debug/
+  -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BoilerHTML.com | A very extensive HTML5 boilerplate.">
+  <meta property="og:url" content="https://boilerHTML.com">
+  <meta property="og:image" content="/images/social/og-image.jpg">
+  <meta property="og:description" content="BoilerHTML is an extensive HTML5 boilerplate that can be used a starter for any website.">
+
+  <!-- Add twitter tags for cp-cards.
+    "With Twitter cards, you can attach rich photos, videos and media experiences to Tweets, helping to drive traffic to your website. Simply add a few lines of markup to your webpage, and users who Tweet links to your content will have a “card” added to the Tweet that’s visible to their followers."
+    Other tags and more information on twitter cards on https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
+    Validate twitter cards: https://cards-dev.twitter.com/validator
+    Twitter cards can use Open Graph tags too. Defining twitter card tags gives more control over the card type and content: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup -->
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@boilerHTML"> <!-- twitter username card is attributed to -->
+  <meta name="twitter:creator" content="@performanize"> <!-- twitter username of content creator. Used with summary_large_image cards -->
+  <meta name="twitter:title" content="BoilerHTML.com | A very extensive HTML5 boilerplate." />
+  <meta name="twitter:description" content="BoilerHTML is an extensive HTML5 boilerplate that can be used a starter for any website." />
+  <meta name="twitter:image" content="/images/social/twitter-image.jpg" />
+  <meta name="twitter:image:alt" content="/images/social/twitter-image-alt.jpg" />
+
+  <!-- Use schema.org (https://schema.org/docs/gs.html) to create structured data for the pages of your website.
+    Schema.org provides a collection of shared vocabularies webmasters can use to mark up their pages in ways that can be understood by the major search engines: Google, Microsoft, Yandex and Yahoo!. HTML provides information on how pages look. Structured data provides information about what the content is.
+    Google structured data helper tool: https://www.google.com/webmasters/markup-helper/u/0/
+    Google structured data testing tool: https://search.google.com/structured-data/testing-tool -->
+
+  <!-- #endregion Meta information-->
+
+  <!-- Set all necessary page icons.
+    Consider designing an alternative to the generated images!
+    Use http://iconogen.com to generate a complete set. -->
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/icons/android-chrome-192x192.png" sizes="192x192">
+
+  <!-- Set Microsoft tile definition for IE and legacy Edge
+    ==> TODO: find out if New edge uses the too???
+    ==> TODO: Look at badge polling
+    ==> TODO: Look at notification polling
+    Don't add msapplication stuff as meta tags since they are only needed by a browser that supports them. 
+    This avoids that every user has to downmoad the tags. Adding the configuration as a file allows browsers to cache the file. 
+    Some tile images are created by http://iconogen.com. 
+    https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85) -->
+
+  <meta name="msapplication-config" content="browserconfig.xml"/>
+
+  <meta name="theme-color" content="#9013FE">
+
+  <!-- Set the Safari pinned tab icon.
+    Specifications can be found on https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedcp-tabs/pinnedcp-tabs.html -->
+
+  <link rel="mask-icon" href="/images/icons/logo-pin.svg" color="#9013FE">
+
+  <!-- Set the manifest file for chrome splash screen
+    ==> TODO: add the correct icons
+    In Chrome 47 and later, a splash screen is displayed for sites launched from a homescreen. 
+    https://developer.mozilla.org/en-US/docs/Web/Manifest
+    This splashscreen is auto-generated from properties in the web app manifest, specifically: 
+    - name
+    - background_color
+    - The icon in the icons array that is closest to 128dpi for the device.
+  -->
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Sitemap
+    ==> TODO: Documentation and link to webmaster tools?
+    Add an absolute linked sitemap tag.
+    Allways add a link to the sitemap if there is one. 
+    https://www.sitemaps.org/protocol.html -->
+
+  <link rel="index" type="application/xml" title="Sitemap" href="https://sitemap.xml">
+
+  <!-- Linked CSS -->
+
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" crossorigin="anonymous">
+
+
+  <!-- #region Scripts HEAD-END -->
+
+  <!-- Add Modernizr (ONLY USE IF ACTUALLY USING FEATURE DETECTION.)
+    Modernizr detects browser features and alows you to use cutting egde stuff for some with support for others.
+    CDN version is 11k. 
+    Use a custom compiled version with only necessary feature detection for production: https://modernizr.com/download 
+    
+    ==> TODO: check where script can be loaded and if defer or async is possible and/or useful.
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    
+    The version below has all the available checks to test size ( => 94KB )
+    
+    <script src="js/modernizr-all.js"></script> -->
+
+  <!-- Use html5shiv
+    Adds support for HTML5 for IE (in this case, see use of 'lt' or 'lower than' versions lower than IE 9).
+    It is used in Modernizr too so delete this section is you are using Modernizr
+    
+    ==> TODO: check where script can be loaded and if defer or async is possible and/or useful  -->
+
+  <!--[if lt IE 9]>
+    <script src="cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+
+  <!--
+  <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/solid.js" integrity="sha384-oKbh94nlFq571cjny1jaIBlQwzTJW4KYExGYjslYSoG/J/w68zUI+KHPRveXB6EY" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/fontawesome.js" integrity="sha384-v0OPwyxrMWxEgAVlmUqvjeEr48Eh/SOZ2DRtVYJCx1ZNDfWBfNMWUjwUwBCJgfO4" crossorigin="anonymous"></script>
+  -->
+
+  <!-- #endregion Scripts HEAD-END-->
+
+  <!-- #region CSS INLINE -->
+
+  <style>
+    h1 {
+      font-family: sans-serif;
+    }
+
+  </style>
+
+  <!-- #rendregion CSS INLINE -->
+
+</head>
+
+<body>
+
+  <!-- #region Scripts FILE-END -->
+  <script defer src="script.js"></script>
+  <!-- #endregion Scripts FILE-END -->
+
+</body>
+
+<!-- #region HTML close tag and footnotes -->
+
+</html>
+
+<!--
+
+  * GOOGLE FONTS: Loading Google fonts as fast as possible for each browser capability.
+
+  ==> TODO: check if this is the same for other web fonts. If it is: generalise comments to all tested webfonts.
+
+    - 1.  Preemptively warm up the fonts’ origins.
+
+    - 2.  Initiate a high-priority, asynchronous fetch for the CSS file. Works in most modern browsers.
+    
+    - 3.  Initiate a low-priority, asynchronous fetch that gets applied to the page only after it’s arrived. Works in all browsers with JavaScript enabled.
+    
+    - 4.  In the unlikely event that a visitor has intentionally disabled JavaScript, fall back to the original method. The good news is that, although this is a render-blocking request, it can still make use of the preconnect which makes it marginally faster than the default.
+
+    - 5.  Add url parameter text= with all URL encoded characters that use the font to make the size of the font that has to be loaded smaller.
+
+  -->
+
+<!-- #endregion footnotes-->
